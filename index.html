@@ -49,7 +49,27 @@
   </style>
 
   
+  <style>
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      font-size: 10vw;
+      background: darkcyan;
+    }
 
+    .content {
+      display: none;
+    }
+  </style>
+  
  
 
  
@@ -61,7 +81,12 @@
 </head>
 
 <body>
-
+  <div class="loading-screen">
+    <p>Loading... wait...</p>
+  </div>
+ 
+ 
+ <div class="content">
  
 
  <iframe src="https://chat-dk-v3.premruidas.repl.co/index.php">
@@ -72,9 +97,23 @@
 
   
 
-  
+ </div>
 
- 
+ <script>
+   window.addEventListener('load', function() {
+  // Hide the loading screen
+  var loadingScreen = document.querySelector('.loading-screen');
+  loadingScreen.style.display = 'none';
+
+  // Show the content area
+  var content = document.querySelector('.content');
+  content.style.display = 'block';
+});
+
+
+
+
+ </script>
 
 </body>
 
